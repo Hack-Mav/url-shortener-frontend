@@ -19,8 +19,10 @@ const Shortener = () => {
 
   return (
     <div className="shortener" style={{ maxWidth: "600px", margin: "0 auto", textAlign: "center" }}>
-      <form onSubmit={handleSubmit}>
-        {/* Long URL input */}
+      <h2 style={{ color: "#6200ea", marginBottom: "20px" }}>Shorten Your URL</h2>
+
+      <form onSubmit={handleSubmit} style={{ backgroundColor: "#ffffff", padding: "20px", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}>
+        {/* Long URL Input */}
         <input
           type="url"
           placeholder="Enter long URL"
@@ -38,7 +40,7 @@ const Shortener = () => {
           }}
         />
 
-        {/* Expiration Date input */}
+        {/* Expiration Date Input */}
         <input
           type="date"
           value={expirationDate}
@@ -55,15 +57,36 @@ const Shortener = () => {
         />
 
         {/* Submit Button */}
-        <button type="submit" style={{ width: "100%", height: "50px", fontSize: "16px", backgroundColor: "#4CAF50", color: "#fff", border: "none", borderRadius: "5px" }}>
-          Shorten
+        <button
+          type="submit"
+          style={{
+            width: "100%",
+            height: "50px",
+            fontSize: "16px",
+            backgroundColor: "#6200ea",
+            color: "#fff",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        >
+          Shorten URL
         </button>
       </form>
 
       {/* Output Section */}
       {shortUrl && (
-        <div className="result" style={{ marginTop: "20px" }}>
-          <p>Shortened URL:</p>
+        <div
+          className="result"
+          style={{
+            marginTop: "20px",
+            padding: "20px",
+            backgroundColor: "#f4f4f9",
+            borderRadius: "10px",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <p style={{ color: "#6200ea", fontWeight: "bold" }}>Shortened URL:</p>
           <input
             type="text"
             readOnly
@@ -84,10 +107,11 @@ const Shortener = () => {
               width: "100%",
               height: "50px",
               fontSize: "16px",
-              backgroundColor: "#4CAF50",
+              backgroundColor: "#6200ea",
               color: "#fff",
               border: "none",
               borderRadius: "5px",
+              cursor: "pointer",
             }}
           >
             Copy to Clipboard
