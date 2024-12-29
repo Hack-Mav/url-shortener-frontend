@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://url-shortener-dot-argon-magnet-442917-k1.el.r.appspot.com",
+  baseURL: `${process.env.REACT_APP_BASE_URL_FOR_URL_SHORTENER}`,
     headers: {
         "Content-Type": "application/json",
     },
@@ -9,4 +9,8 @@ const api = axios.create({
 
 export const shortenURL = (longUrl, expirationDate) => {
   return api.post("/shorten", { long_url: longUrl, expiry_date: expirationDate });
+};
+
+export const shortenURLHistory = () => {
+  return api.post("/history", "");
 };
